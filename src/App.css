@@ -1,0 +1,366 @@
+.App{
+    background-color: black;
+    height: 100vh;
+}
+.navbar-brand{
+    color: rgb(235, 73, 100)!important;
+    font-weight:700;
+    font-size: 25px !important;
+}
+.navbar-nav .nav-link{
+    margin-bottom: 10px;
+}
+
+.navbar-nav .nav-link {
+    display: inline-block;
+    color: rgb(235, 73, 100);
+    text-decoration: none;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 4px;
+    background: rgb(235, 73, 100);
+    transition: width .3s;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 700px) { 
+    .navbar-nav .nav-link:hover{
+        width: 20%;
+    }   
+}
+
+/* .navbar-nav .nav-link:after {
+    display:block;
+    content: '';
+    border-bottom: solid 3px rgb(235, 73, 100);  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+  }
+  .navbar-nav .nav-link:hover:after { transform: scaleX(1); }
+  .navbar-nav .nav-link.fromRight:after{ transform-origin:100% 50%; }
+  .navbar-nav .nav-link.fromLeft:after{  transform-origin:  0% 50%; } */
+
+#section{
+    margin-top:7%;
+}
+
+.higlight{
+    color: rgb(235, 73, 100);
+    font-weight: 700;
+}
+
+.paragraph{
+    font-size: 1.2rem;
+}
+
+.images{
+    display: block;
+    max-width:60%;
+    height: auto;
+    width: 100%;
+}
+
+@media (max-width: 900px) { 
+    .images{
+        margin:auto;
+    }
+}
+
+@media (max-width: 900px) { 
+    .App{
+        height:auto;
+    }   
+}
+
+.title{
+    animation-name:moveLeft;
+    animation-duration: 1s;
+}
+
+.title1{
+    animation-name:moveRight;
+    animation-duration: 1s;
+}
+
+.title2{
+    animation-name:moveUp;
+    animation-duration: 1s;
+}
+
+@keyframes moveLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-150px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/* **********About************ */
+ul.menu li{
+    display: inline-block;
+    padding-right: 10%;
+}
+
+li.item{
+    color:white;
+    font-size:20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+li.item.active{
+    color: rgb(235, 73, 100);
+}
+
+li.item:hover{
+    color: rgb(235, 73, 100);
+}
+
+.content{
+    display: none;
+}
+
+.show-content{
+    color: white;
+}
+
+.skill-bar{
+    width: 100%;
+    margin:  20px 0;
+}
+
+.skill-bar .info{
+    margin-bottom: 5px;
+}
+
+.skill-bar .info span{
+    font-size: 15px;
+    font-weight: 600;
+    opacity: 0;
+    animation: showText 0.5s 1s linear forwards;
+}
+
+@keyframes showText {
+    100%{
+        opacity: 1;
+    }
+}
+
+.skill-bar .progress-line{
+    height: 10px;
+    width: 80%;
+    background:#f0f0f0;
+    position: relative;
+    border-radius: 10px;
+    transform: left;
+    transform: scaleX(0);
+    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+
+.progress-line span{
+    height: 100%;
+    width: 80%;
+    background:  rgb(240, 148, 164);
+    position:absolute;
+    border-radius: 10px;
+    transform: left;
+    transform: scaleX(0);
+    animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+
+@keyframes animate {
+   100%{
+    transform: scaleX(1);
+   } 
+}
+
+.progress-line.html span{
+ width: 90%;
+}
+.progress-line.css span{
+ width: 80%;
+}
+.progress-line.bootstrap span{
+ width: 80%;
+}
+.progress-line.javascript span{
+ width: 70%;
+}
+.progress-line.reactjs span{
+ width: 65%;
+}
+.progress-line.figma span{
+ width: 75%;
+}
+
+.progress-line span::before{
+    position: absolute;
+    content: "";
+    top: -10px;
+    right: 0;
+    height: 0;
+    width: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-color:white;
+    opacity: 0;
+    animation: showText 0.5s 1.5s linear forwards;
+}
+.progress-line span::after{
+    position: absolute;
+    top: -30px;
+    right: 0;
+    background-color: white;
+    color:#000;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 3px;
+    opacity: 0;
+    animation: showText 0.5s 1.5s linear forwards;
+}
+
+@keyframes showText {
+ 100%{
+    opacity: 1;
+ }   
+}
+
+.progress-line.html span::after{
+   content: "90%";
+}
+.progress-line.css span::after{
+   content: "80%";
+}
+.progress-line.bootstrap span::after{
+   content: "80%";
+}
+.progress-line.javascript span::after{
+   content: "70%";
+}
+.progress-line.reactjs span::after{
+   content: "65%";
+}
+.progress-line.figma span::after{
+   content: "75%";
+}
+
+/* *************Contact******************* */
+.menu1{
+   list-style-type:none;
+}
+
+.icon{
+    padding-right: 3%;
+    margin-top: 3%;
+    color:rgb(240, 148, 164) ;
+}
+
+.heading{
+    color:rgb(235, 73, 100);
+}
+
+.images1{
+    display: block;
+    max-width:30%;
+    height: auto;
+    width: 100%;
+}
+@media (max-width:800px) { 
+    .images1{
+        margin: auto;
+        max-width:60%;
+        
+    }   
+}
+
+/* .login-form{
+    background-color: #fff;
+    padding:10%;
+} */
+
+.label1{
+    color: white;
+    font-size: 20px;
+    font-weight:600;
+}
+
+.input1{
+    background-color: rgb(175, 170, 170) !important;
+    border: 1px solid black !important;
+    font-weight: 500 !important;
+}
+
+.form_summision{
+    color:white;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 600;
+    margin:15%;
+    height: 100vh;
+}
+
+/* ******************Services******************* */
+
+.card{
+    background-color: rgb(252, 206, 213) !important;
+}
+
+.icon1{
+    color:rgb(235, 73, 100) ;  
+}
+
+.card_title{
+    font-weight: 700 !important;
+}
+
+.card_text{
+    font-weight: 600 !important;
+}
+
+.card:hover{
+    background-color:rgb(224, 122, 139) !important ;
+    cursor: pointer;
+}
+
+@media (max-width:800px) { 
+    .margin_top{
+        margin-top: 10% !important;
+        margin-bottom: 5% !important;
+    }   
+}
+
